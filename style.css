@@ -1,0 +1,176 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root{
+  --primary-color: #fff;
+  --secondary-color: #333;
+  --hover-color: #f0f0f0;
+  --hover-text: #333;
+  --filter-buttons-bg: #fff;
+  --border-color: #ddd
+}
+
+.dark_on{
+  --primary-color: #202835;
+  --secondary-color: #fff;
+  --hover-color: #2A3A51;
+  --hover-text: #33adff;
+  --filter-buttons-bg: #252C3E;
+  --border-color: #464646;
+}
+
+body{
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.main{
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  display: flex;
+}
+
+.filter_buttons{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--filter-buttons-bg);
+  width: 13%;
+  border-right: 1px solid var(--border-color);
+  overflow-y: scroll;
+  scroll-behavior: none;
+}
+
+.filter_buttons::-webkit-scrollbar {
+  display: none;
+}
+
+
+.filter_buttons button{
+  border: none;
+  outline:none;
+  padding: 17px;
+  background: none;
+  text-align: left;
+  /* transition: all .1s ease; */
+  color: var(--secondary-color);
+}
+
+
+.align_icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+.align_buttons{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
+  align-items: flex-start;
+}
+
+.color{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color input{
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+
+.align_buttons button{
+  padding: 17px 17px 17px 40px;
+  width: 100%;
+}
+.download_btn{
+  border-bottom: 1px solid var(--border-color);
+}
+.download_btn button{
+  padding: 17px 17px 17px 40px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.music_btn{
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+.theme_btn button{
+  padding: 17px 17px 17px 40px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.theme_btn{
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+.sound_btn button{
+  padding: 17px 17px 17px 40px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.sound_btn{
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+.music_btn button{
+  padding: 17px 17px 17px 40px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.filter_buttons button:hover{
+  background: var(--hover-color);
+  color: var(--hover-text);
+}
+
+
+
+.textarea{
+  width: 87%;
+}
+.textarea #content{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 15px 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color)
+}
+
+
+
+@media screen and (max-width: 1020px) {
+  .filter_buttons{
+    width: 25%;
+  }
+  .textarea{
+    width: 75%;
+  }
+}
