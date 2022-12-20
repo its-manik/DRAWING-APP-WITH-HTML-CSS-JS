@@ -12,38 +12,43 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <section class="main shadow">
+  <section class="main">
     <div class="filter_buttons">
       <!-- <img src="labologo.png" id="img"> -->
       <div class="align_icons">
-        <button type="button" onclick="formatDoc('justifyLeft')" data-toggle="tooltip" data-placement="top" title="Left Align"><i
-            class="fas fa-align-left"></i></button>
-        <button type="button" onclick="formatDoc('justifyCenter')" data-toggle="tooltip" data-placement="top" title="Center Align"><i
-            class="fas fa-align-center"></i></button>
-        <button type="button" onclick="formatDoc('justifyRight')" data-toggle="tooltip" data-placement="top" title="Right Align"><i
-            class="fas fa-align-right"></i></button>
+        <button type="button" onclick="formatDoc('justifyLeft')" data-toggle="tooltip" data-placement="top"
+          title="Left Align"><i class="fas fa-align-left"></i></button>
+        <button type="button" onclick="formatDoc('justifyCenter')" data-toggle="tooltip" data-placement="top"
+          title="Center Align"><i class="fas fa-align-center"></i></button>
+        <button type="button" onclick="formatDoc('justifyRight')" data-toggle="tooltip" data-placement="top"
+          title="Right Align"><i class="fas fa-align-right"></i></button>
       </div>
       <div class="align_buttons">
         <button class="color">
-					<span>Color</span>
-					<input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
-				</button>
-				<button class="color">
-					<span>Background</span>
-					<input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
-				</button>
-        <button type="button" onclick="formatDoc('bold')" data-toggle="tooltip" data-placement="top" title="Bold Text">Bold</button>
+          <span>Color</span>
+          <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+        </button>
+        <button class="color">
+          <span>Background</span>
+          <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';">
+        </button>
+        <button type="button" onclick="formatDoc('bold')" data-toggle="tooltip" data-placement="top"
+          title="Bold Text">Bold</button>
         <button type="button" onclick="formatDoc('italic')" data-toggle="tooltip" data-placement="top"
           title="Italic Text">Italic</button>
         <button type="button" onclick="fj()" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Clear
           Text</button>
       </div>
       <div class="download_btn">
-        <button type="button" onclick="fk()" data-toggle="tooltip" data-placement="top" title="Download"> <i
+        <button id="download" type="button" data-toggle="tooltip" data-placement="top" title="Download"> <i
             class="fa-solid fa-download"></i> <span>Download</span></button>
       </div>
       <div class="music_btn">
@@ -78,92 +83,13 @@
 
     <div class="textarea" oninput="typing()">
       <div id="content" contenteditable="true" spellcheck="false">
-        
+
       </div>
     </div>
 
   </section>
 
-  <script>
-    const soundOff = document.querySelector(".sound_off")
-    const soundOn = document.querySelector(".sound_on")
-    const dark = document.querySelector(".dark")
-    const light = document.querySelector(".light")
-    const soundBtn = document.querySelector(".sound_btn")
-    const musicBtn = document.querySelector(".music_btn")
-    const themeBtn = document.querySelector(".theme_btn")
-    const mainBg = document.querySelector(".main")
-    const musicText = musicBtn.querySelector("span")
-    const themeText = themeBtn.querySelector("span")
-    const soundText = soundBtn.querySelector("span")
-    // const soundOn = document.querySelector(".sound_on")
-
-    soundOn.style.display = "none"
-    light.style.display = "none"
-    themeText.textContent = "Dark"
-    soundText.textContent = "Sound Off"
-    musicText.textContent = "Music On"
-
-    let song = new Audio('./s.mp3');
-    let typeSound = new Audio('./type.mp3');
-
-    let typingSound = true;
-    let playSong = true;
-
-    musicBtn.addEventListener("click", () => {
-
-      if (playSong) {
-        musicText.textContent = "Music Off"
-        song.play()
-        playSong = false
-      } else {
-        musicText.textContent = "Music On"
-        song.load()
-        playSong = true
-      }
-    })
-
-    soundBtn.addEventListener("click", () => {
-      if (soundOff.style.display === "none") {
-        soundOn.style.display = "none"
-        soundOff.style.display = "block"
-        soundText.textContent = "Sound Off"
-        typingSound = true
-      } else {
-        soundOff.style.display = "none"
-        soundOn.style.display = "block"
-        soundText.textContent = "Sound On"
-        typingSound = false
-      }
-    })
-    const typing = () => {
-      if (typingSound) {
-        typeSound.play()
-        console.log('hello');
-      }
-    }
-
-    themeBtn.addEventListener("click", () => {
-      mainBg.classList.toggle("dark_on")
-      if (light.style.display === "none") {
-        dark.style.display = "none"
-        light.style.display = "block"
-        themeText.textContent = "Light"
-      } else {
-        storageObject = {
-          dark: "block",
-          light: "none",
-          text: "Dark",
-          mode: "dark_off"
-        }
-        light.style.display = "none"
-        dark.style.display = "block"
-        themeText.textContent = "Dark"
-      }
-    })
-  </script>
-  <script src="home.js">
-
+  <script src="home.js"></script>
   </script>
 </body>
 
