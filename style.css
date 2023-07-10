@@ -6,6 +6,16 @@
 }
 
 :root{
+  --primary-color: #32353a;
+  --secondary-color: #fff;
+  --hover-color: rgba(83, 86, 87, 0.5);
+  --hover-text: #fff;
+  --filter-buttons-bg: #32353a;
+  --border-color: #464646;
+  --body-color: #232627;
+}
+
+.dark_on{
   --primary-color: #fff;
   --secondary-color: #333;
   --hover-color: #f0f0f0;
@@ -13,16 +23,6 @@
   --filter-buttons-bg: #fff;
   --border-color: #ddd;
   --body-color: #4A98F7;
-}
-
-.dark_on{
-  --primary-color: #202835;
-  --secondary-color: #fff;
-  --hover-color: #2A3A51;
-  --hover-text: #33adff;
-  --filter-buttons-bg: #252C3E;
-  --border-color: #464646;
-  --body-color: #525252;
 }
 
 body{

@@ -12,7 +12,7 @@ const soundText = soundBtn.querySelector("span")
 
 
 soundOn.style.display = "none"
-light.style.display = "none"
+// light.style.display = "none"
 themeText.textContent = "Dark"
 soundText.textContent = "Sound Off"
 musicText.textContent = "Music On"
@@ -59,11 +59,11 @@ const typing = () => {
 
 
 themeBtn.addEventListener("click", () => {
-  if (light.style.display === "none") {
+  if (dark.style.display === "none") {
     storageObject = {
-      dark: "none",
-      light: "block",
-      text: "Light",
+      light: "none",
+      dark: "block",
+      text: "Dark",
       mode: "dark_on"
     }
     localStorage.setItem("theme", JSON.stringify(storageObject))
@@ -74,9 +74,9 @@ themeBtn.addEventListener("click", () => {
     mainBg.classList.add(JSON.parse(localStorage.getItem("theme")).mode)
   } else {
     storageObject = {
-      dark: "block",
-      light: "none",
-      text: "Dark",
+      dark: "none",
+      light: "block",
+      text: "Light",
       mode: "dark_off"
     }
     localStorage.setItem("theme", JSON.stringify(storageObject))
